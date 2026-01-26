@@ -4,7 +4,8 @@
  */
 var reverseString = function(s) {
     let n=s.length;
-    for(let i=0;i<n/2;i++){
+    let l=Math.floor(n/2);
+    for(let i=0;i<l;i++){
         let temp=s[i];
         s[i]=s[n-(i+1)];
         s[n-(i+1)]=temp; 
