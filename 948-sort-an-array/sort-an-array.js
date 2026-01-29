@@ -4,7 +4,7 @@
  */
 var sortArray = function(nums) {
     if(nums.length<=1) return nums;
-    let m=nums.length/2;
+    let m=Math.floor(nums.length/2);
     let left=sortArray(nums.slice(0,m));
     let right=sortArray(nums.slice(m));
     return merge(left,right);
