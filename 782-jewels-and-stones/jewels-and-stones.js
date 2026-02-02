@@ -9,6 +9,7 @@ var numJewelsInStones = function(jewels, stones) {
         for(let j=0;j<jewels.length;j++){
         if(stones[i]===jewels[j]){
             c++;
+            break;
     
         }
     }}
