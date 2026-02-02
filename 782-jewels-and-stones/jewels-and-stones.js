@@ -4,15 +4,15 @@
  * @return {number}
  */
 var numJewelsInStones = function(jewels, stones) {
-    let c=0;
-    for(let i=0;i<stones.length;i++){
-        for(let j=0;j<jewels.length;j++){
-        if(stones[i]===jewels[j]){
-            c++;
-            break;
-    
+    let jset=new Set();
+    let count=0;
+    for(let i=0;i<jewels.length;i++){
+        jset.add(jewels[i]);
+    }
+    for(let j=0;j<stones.length;j++){
+        if(jset.has(stones[j])){
+            count++;
         }
-    }}
-    return c;
-    
+    }
+    return count;
 };
