@@ -1,0 +1,32 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        if(nums==null || nums.length==0){
+            return new int[]{-1,-1};
+        }
+        int[] ans={-1,-1};
+        int l=0;
+        int r=nums.length-1;
+        while(l<r){
+            int m =l+(r-l)/2;
+            if(nums[m]<target){
+                l=m+1;
+            }else{
+                r=m;
+            }
+        }
+        if(nums[l]==target) ans[0]= l;
+       l=0;
+       r=nums.length-1;
+       while(l<r){
+        int m=l+(r-l+1)/2;
+        if(nums[m]>target){
+            r=m-1;
+        }else{
+            l=m;
+        }
+       }
+       if(nums[l]==target) ans[1]=l;
+       return ans;
+        
+    }
+}
