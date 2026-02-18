@@ -3,7 +3,7 @@ class Solution {
         int n=arr.length;
         int start=0;
         int end=n-1;
-        while(start<=end){
+        while(start<end){
             int sum=arr[start]+arr[end];
             if(sum>target){
                 end--;
