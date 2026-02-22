@@ -18,11 +18,10 @@ class Solution {
         int left=0;
         int right=val.size()-1;
         while(left<right){
-            if(val.get(left)!=val.get(right)){
+            if(val.get(left++)!=val.get(right--)){
                 return false;
             }
-            left++;
-            right--;
+        
         }
             return true;
         
