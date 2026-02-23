@@ -1,7 +1,6 @@
 class Solution {
     public int characterReplacement(String s, int k) {
-        if (s == null || s.length() == 0) return 0;
-        
+        if (s == null || s.length() == 0) return 0;   
         int[] map = new int[26];
         int i = 0, maxWindow = 0;
         for (int j = 0; j < s.length(); j++) {
