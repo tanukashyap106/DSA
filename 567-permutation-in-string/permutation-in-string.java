@@ -20,7 +20,6 @@ class Solution {
             }
         }
         return false;
-
     }
     private boolean isHashSame(int[] a,int[] b){
         for(int i=0;i<26;i++){
