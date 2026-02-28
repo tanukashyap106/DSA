@@ -31,10 +31,10 @@ class Solution {
             List<Integer> levelArr=new ArrayList<>();
             for(int i=0;i<levelsize;i++){
                 TreeNode curr=q.poll();
-                levelArr.add(curr.val);
+               
                 if(curr.left!=null) q.offer(curr.left);
                 if(curr.right!=null) q.offer(curr.right);
-           
+            levelArr.add(curr.val);
 
             }
             ans.add(levelArr);
