@@ -25,7 +25,7 @@ class Solution {
         int newSum=currSum+curr.val;
         if(curr.left==null && curr.right==null){
             if(newSum==targetSum){
-                ans= true;
+                ans=true;
             }
         }
         if(curr.left!=null) traverse(curr.left,newSum,targetSum);
