@@ -8,18 +8,21 @@
  * }
  */
 class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p || root == q) {
-            return root;
-        }
-        TreeNode left = lowestCommonAncestor(root.left, p, q);
-        TreeNode right = lowestCommonAncestor(root.right, p, q);
+    TreeNode lca=null;
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q){
+        traversal(root, p, q);
+        return lca;
+    }
+    private int traversal(TreeNode curr, TreeNode p, TreeNode q) {
+        if (curr == null) return 0;
+        int left = traversal(curr.left, p, q);
+        int right = traversal(curr.right, p, q);
+        int mid = (curr == p || curr == q) ? 1 : 0;
 
-        if (left != null && right != null) {
-            return root;
+        if (left + right + mid >= 2 && lca == null) {
+            lca = curr;
         }
-
-        return (left != null) ? left : right;
+      return left + right + mid;
     }
 }
-        
+    
