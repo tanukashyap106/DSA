@@ -13,14 +13,15 @@
  *     }
  * }
  */
-class Solution {
-    public boolean isValidBST(TreeNode root) {
-        return isValid(root,Long.MIN_VALUE,Long.MAX_VALUE);
-        
+class Solution{
+      public boolean isValidBST(TreeNode root) {
+        return isValid(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
-    private boolean isValid(TreeNode curr,long l,long h){
-        if(curr==null) return true;
-        if(curr.val<=l || curr.val>=h) return false;
-        return isValid(curr.left,l,curr.val) && isValid(curr.right,curr.val,h);
+    private boolean isValid(TreeNode curr, long l, long h) {
+        if (curr == null) return true;
+        if (curr.val <= l || curr.val >= h) return false;
+        return isValid(curr.left, l, curr.val) &&
+               isValid(curr.right, curr.val, h);
     }
 }
+    
