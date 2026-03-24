@@ -24,14 +24,15 @@ class Solution {
 
     }
 
-    public void inorder(TreeNode curr){
-        if(curr==null) return;
-        if(curr.left!=null) inorder(curr.left);
+    public void inorder(TreeNode curr) {
+        if (curr == null || count == 0)
+            return;
+        inorder(curr.left);
         count--;
-        if(count==0){
-         ans=curr.val; 
-         return;
+        if (count == 0) {
+            ans = curr.val;
+            return;
+        }
+        inorder(curr.right);
     }
-    if(curr.right!=null) inorder(curr.right);
-}
 }
