@@ -9,19 +9,13 @@
  */
 
 class Solution {
-    TreeNode lca=null;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-      traversal(root,p,q);
-      return lca;
-    }
-    private int traversal(TreeNode curr,TreeNode p,TreeNode q){
-        if(curr==null) return 0;
-        int left=traversal(curr.left,p,q);
-        int right=traversal(curr.right,p,q);
-        int mid=(curr==p || curr==q)?1:0;
-        if(left+right+mid>=2 && lca==null){
-            lca=curr;
-        }
-        return left+right+mid; 
+          if (p.val < root.val && q.val < root.val)
+            return lowestCommonAncestor(root.left, p, q);
+        else if (p.val > root.val && q.val > root.val)
+            return lowestCommonAncestor(root.right, p, q);
+        else
+            return root;
+        
     }
 }
