@@ -15,11 +15,11 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List ans=new ArrayList<>();
+        List<Integer> ans=new ArrayList<>();
         traversal(root,ans);
         return ans;
     }
-    public void traversal(TreeNode curr,List ans){
+    private void traversal(TreeNode curr,List ans){
         if(curr==null) return;
         traversal(curr.left,ans);
         ans.add(curr.val);
