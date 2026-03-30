@@ -4,19 +4,16 @@ class Solution {
         int l=2;
         int r=x/2;
         while(l<=r){
-            int m=(l+r)/2;
-            long s=(long)m*m;
-            if(x==s){
-                return m;
-            }
-            else if(x<s){
+            int m=l+(r-l)/2;
+            long sq=(long)m*m;
+            if(sq==x) return m;
+            else if(sq>x){
                 r=m-1;
-            }else{
+            }
+            else{
                 l=m+1;
             }
-
         }
         return r;
-        
     }
 }
