@@ -9,7 +9,8 @@ public class Solution extends VersionControl {
             int m=l+(r-l)/2;
             if(!isBadVersion(m)){
                 l=m+1;
-            }else{
+            }
+            else{
                 r=m;
             }
         }
