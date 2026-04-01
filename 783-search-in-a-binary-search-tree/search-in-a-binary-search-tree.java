@@ -14,10 +14,23 @@
  * }
  */
 class Solution {
+    TreeNode ans=null;
     public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null || root.val==val)
-            return root;
-        return root.val > val ? searchBST(root.left, val) : searchBST(root.right, val);
-
+        traversal(root,val);
+        return ans;
+    }
+    private void traversal(TreeNode curr,int val){
+        if(curr==null) return;
+        if(curr.val==val){
+            ans=curr;
+            return;
+        }
+        else{
+            if(curr.val<val){
+                if(curr.right!=null) traversal(curr.right,val);
+            }else{
+                if(curr.left!=null) traversal(curr.left,val);
+            }
+        }
     }
 }
