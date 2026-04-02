@@ -4,11 +4,11 @@ class Solution {
         int r=nums.length-1;
         while(l<=r){
             int m=l+(r-l)/2;
+            if(m>0 && nums[m]<=nums[m-1]){
+                return nums[m];
+            }
             if(nums[l]<=nums[r]){
                 return nums[l];
-            }
-            if(m>0 && nums[m]<nums[m-1]){
-                return nums[m];
             }
             if(nums[l]>nums[m]){
                 r=m-1;
@@ -18,4 +18,5 @@ class Solution {
         }
         return -1;
     }
+
 }
