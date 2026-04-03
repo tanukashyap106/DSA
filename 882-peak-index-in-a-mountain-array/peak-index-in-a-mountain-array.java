@@ -6,12 +6,10 @@ class Solution {
             int m=l+(r-l)/2;
             if(arr[m+1]>arr[m]){
                 l=m+1;
-            }
-            else{
+            }else{
                 r=m;
             }
         }
         return l;
-        
     }
 }
