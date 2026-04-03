@@ -4,18 +4,16 @@ class Solution {
         int r=arr.length-k;
         while(l<r){
             int m=l+(r-l)/2;
-            if((arr[m+k]-x)<(x-arr[m])){
+            if(x-arr[m]>arr[m+k]-x){
                 l=m+1;
-            }
-            else{
+            }else{
                 r=m;
             }
         }
-        List ans=new ArrayList<>();
-        for(int i=l;i<l+k;i++){
-            ans.add(arr[i]);
-        }
-        return ans;
+        List res=new ArrayList<>();
+        for(int i=l;i<l+k;i++)
+        res.add(arr[i]);
+        return res;
         
     }
 }
