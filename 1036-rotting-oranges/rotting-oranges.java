@@ -2,33 +2,33 @@ class Solution {
     public int orangesRotting(int[][] grid) {
         int m=grid.length;
         int n=grid[0].length;
-        Queue<int[]> q=new LinkedList<>();
+        Queue<int[]> queue=new LinkedList<>();
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(grid[i][j]==2){
-                    q.add(new int[]{i,j,0});
+                    queue.add(new int[]{i,j,0});
                 }
             }
         }
         int maxMin=0;
-        while(!q.isEmpty()){
-            int[] curr=q.poll();
+        while(!queue.isEmpty()){
+            int[] curr=queue.poll();
             int x=curr[0],y=curr[1],level=curr[2];
             if(x>0 && grid[x-1][y]==1){
                 grid[x-1][y]=2;
-                q.add(new int[]{x-1,y,level+1});
+                queue.add(new int[]{x-1,y,level+1});
             }
-             if(x<m-1 && grid[x+1][y]==1){
+            if(x<m-1 && grid[x+1][y]==1){
                 grid[x+1][y]=2;
-                q.add(new int[]{x+1,y,level+1});
+                queue.add(new int[]{x+1,y,level+1});
             }
-             if(y<n-1&& grid[x][y+1]==1){
+            if(y<n-1 && grid[x][y+1]==1){
                 grid[x][y+1]=2;
-                q.add(new int[]{x,y+1,level+1});
+                queue.add(new int[]{x,y+1,level+1});
             }
-             if(y>0 && grid[x][y-1]==1){
+            if(y>0 && grid[x][y-1]==1){
                 grid[x][y-1]=2;
-                q.add(new int[]{x,y-1,level+1});
+                queue.add(new int[]{x,y-1,level+1});
             }
             maxMin=Math.max(level,maxMin);
         }
