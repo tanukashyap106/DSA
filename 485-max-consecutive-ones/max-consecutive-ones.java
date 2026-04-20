@@ -6,10 +6,10 @@ class Solution {
             if(i==1){
                 currCount++;
             }else{
-                maxCount=Math.max(maxCount,currCount);
+                maxCount=Math.max(currCount,maxCount);
                 currCount=0;
             }
         }
-        return Math.max(maxCount,currCount);
+        return Math.max(currCount,maxCount);
     }
 }
